@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <title> {% block pagetitle %}
+
+        {% endblock pagetitle %}</title>
+    <style>
+        .bg {
+
+            
+            background-position: center;
+        }
+
+        .file-upload input[type='file'] {
+            display: none;
+        }
+
+        body {
+            /*background-color: orange;*/
+            
+            /* background: -webkit-linear-gradient(to right, #66a776, #043610);
+            background: linear-gradient(to right, #5d9c6a, #059b0d); */
+            background-image: url(../static/images/background1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: max-content;
+        }
+
+        .rounded-lg {
+            border-radius: 1rem;
+        }
+
+        .custom-file-label.rounded-pill {
+            border-radius: 50rem;
+        }
+
+        .custom-file-label.rounded-pill::after {
+            border-radius: 0 50rem 50rem 0;
+        }
+
+        label {
+            background-color: rgb(2, 46, 15);
+            color: white;
+            padding: 0.5rem;
+            font-family: sans-serif;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #file-chosen {
+            margin-left: 0.3rem;
+            font-family: sans-serif;
+        }
+
+        .footer-basic {
+            padding-top: 40px;
+            padding-bottom: 10px;
+            background-color: #35973f;
+            color: #000000;
+        }
+
+        .footer-basic ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+            margin-top: 5px;
+            margin-left: 5px;
+            text-align: left;
+            font-size: 13px;
+            color: #000000;
+            margin-bottom: 0;
+        }
+    </style>
+     
+</head>
+
+<body>   
+
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#05380b; padding-left: 2%; font-family: sans-serif;">
+        <a class="navbar-brand" href="#"> <img src="../static/images/sunny.png" width="30" height="30" class="d-inline-block align-top" alt=""> Agrocare</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="navbar-brand active">
+                    <a class="nav-link" href="/" style="color: white;">Home</a>
+                </li>
+                <li class="navbar-brand active">
+                    <a class="nav-link" href="/index" style="color: white;">Prediction</a>
+                </li>
+                <li class="navbar-brand">
+                    <a class="nav-link" href="/market" style="color: white;">Supplements</a>
+                </li>
+                <li class="navbar-brand">
+                    <a class="nav-link" href="/contact" style="color: white;">Contact-Us</a>
+                </li>
+                <li class="navbar-brand">
+                    <a class="nav-link" href="/video" style="color: white;">Live Streaming</a>
+                </li>
+                <li class="navbar-brand dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                      Pages
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/">Home</a>
+                      <a class="dropdown-item" href="/index">Prediction</a>
+                      <a class="dropdown-item" href="/market">Supplements</a>
+                      <a class="dropdown-item" href="/contact">Contact-Us</a>
+                    </div>
+                  </li>
+            </ul>
+
+            <div class="input-group my-2 my-lg-0">
+                <input type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+              </div>
+
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock body %}
+    <div class="footer-basic">
+        <footer style="margin-left: -10%;">
+          
+            <div class="container">
+				<div class="row">
+					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+						<h2 class="footer-heading">Agrocare</h2>
+						<p>The goal of this
+                            research is to show a new way for building a disease detection model using CNN that enables
+                            plant leaf image classification utilising convolutional networks and the Deep Learning algorithm.</p>
+                        <div>
+                            <a target="_blank" href='https://github.com/gautam204'><img src="../static/images/github.png" height="40" width="40"></a>&nbsp
+                            <a target="_blank" href='mailto:gautambathina@gmail.com'><img src="../static/images/gmail.png"  height="40" width="40"></a>&nbsp
+                            <a target="_blank" href='https://www.linkedin.com/in/venkatsaigautam-b-40326b17b/'><img src="../static/images/linkedin.png" height="40" width="40"></a>&nbsp
+                        </div>
+					
+                    </div>
+
+ <!-- Single Footer Widget -->
+ <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+    <h2 class="footer-heading">Quick Links</h2>
+    <ul class="list-unstyled" style="text-align: left;">
+<li><a href="#" class="py-2 d-block">Home</a></li>
+<li><a href="#" class="py-2 d-block">Services</a></li>
+<li><a href="#" class="py-2 d-block">Charts</a></li>
+<li><a href="#" class="py-2 d-block">Privacy</a></li>
+<li><a href="#" class="py-2 d-block">Blog</a></li>
+</ul>
+</div>
+
+<!-- Single Footer Widget -->
+                    
+                    <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+						<h2 class="footer-heading">Resources</h2>
+						<ul class="list-unstyled" style="text-align: left;">
+              <li><a href="#" class="py-2 d-block">Security</a></li>
+              <li><a href="#" class="py-2 d-block">Global</a></li>
+              <li><a href="#" class="py-2 d-block">Charts</a></li>
+              <li><a href="#" class="py-2 d-block">Privacy</a></li>
+              <li><a href="#" class="py-2 d-block">Blog</a></li>
+            </ul>
+					</div>
+
+					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+						<h2 class="footer-heading">Have a Questions?</h2>
+						<div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon ion-ios-pin"></span><span class="text">Shrey Anand, Dhokali, Thane(West)</span></li>
+                <li><a href="#"><span class="icon ion-ios-call"></span><span class="text">+91 9167990962</span></a></li>
+                <li><a href="#"><span class="icon ion-ios-send"></span><span class="text">gautambathina@gmail.com</span></a></li>
+              </ul>
+            </div>
+					</div>
+				</div>
+
+            <br>
+            <div class="dropdown-divider"></div>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+      
+                  <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by Venkatsaigautam Bathina</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+              </div>   
+
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<!-- <script>
+    if (window.matchMedia("(max-width: 767px)").matches)
+    {
+        // The viewport is less than 768 pixels wide
+        document.write("This is a mobile device.");
+        window.location.replace('/mobile-device');
+
+    } else {
+        
+        // The viewport is at least 768 pixels wide
+        document.write("This is a tablet or desktop.");
+    }
+</script> -->
+<!-- <script>
+    if(screen.width <= 700){
+        document.location = 'manthan2.html';
+    }
+</script> -->
+</html>
